@@ -13,7 +13,7 @@ export class ManagequestionsComponent implements OnInit {
   subject:any
   id:any  
   message:string
- 
+ QuesAdded:any
   constructor(public service:DataService, public route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -38,8 +38,9 @@ export class ManagequestionsComponent implements OnInit {
         this.message = "Question added"
         alert(this.message)
         // quesObj.value=null
-
+        
         quesObj.resetForm()
+
       }
       else
       {

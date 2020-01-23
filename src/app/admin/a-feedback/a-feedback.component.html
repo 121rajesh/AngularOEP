@@ -1,104 +1,26 @@
 
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" routerLink ="/home">Shiksha</a>
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/dashboard">DashBoard</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/home">Home</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Modules
-        </a> 
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink ="/admin/modules/managesubjects">Manage Subjects</a>
-          <a class="dropdown-item" routerLink ="/admin/modules/addsubject">Add Subject</a>
-        </div>
-      </li> 
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/users">Users</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Exams
-        </a> 
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink ="/admin/exam/results">Results</a>
-          <!-- <a class="dropdown-item" routerLink ="">Set Paper Format</a> -->
-        </div>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/feedback">Feedback</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/manageprofile">Manage Profile</a>
-      </li> 
-    </ul> 
-    <ul style="padding-left: 532px;">
-      <div>
-       <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" >
-      </div>
-    </ul>
-    <ul class="nav navbar-right">
-        <li>
-            <a class="nav-link" routerLink="/login">Logout</a>
-        </li>
-    </ul>
-     
-   
-  </nav> 
-
+  
 <br><br><br><br>
 
 <div class="bg-img">
   <h1>Admin's feedback page</h1>
-      <div class="content">
-        <table style="text-align: center; width: 100%;">
-          <tr style="font-size:x-large;">
-            <td>Name</td>
-            <td>Email</td>
-            <td></td>
-          </tr><br>
-          <tr>
-            <td>shrey1</td>
-            <td>shrey@123</td>
-            <td><a routerLink="/admin/feedback/viewfb">View Feedback</a></td>
-          </tr> 
-          <tr>
-            <td>shrey1</td>
-            <td>shrey@123</td>
-            <td><a routerLink="/admin/feedback/viewfb">View Feedback</a></td>
-          </tr> 
-          <tr>
-            <td>shrey1</td>
-            <td>shrey@123</td>
-            <td><a routerLink="/admin/feedback/viewfb">View Feedback</a></td>
-          </tr> 
-          <tr>
-            <td>shrey1</td>
-            <td>shrey@123</td>
-            <td><a routerLink="/admin/feedback/viewfb">View Feedback</a></td>
-          </tr> 
-          <tr>
-            <td>shrey1</td>
-            <td>shrey@123</td>
-            <td><a routerLink="/admin/feedback/viewfb">View Feedback</a></td>
-          </tr>          
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Feedbacks</th>
+              <!-- <th>Action</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let users of userData" routerLink="/admin/feedback/viewfb/{{users.FId}}" >
+              <td *ngIf="!users.T_Users.IsLocked">{{users.T_Users.Name}}</td>
+              <td *ngIf="!users.T_Users.IsLocked">{{users.T_Users.EmailId}}</td>
+              <td *ngIf="!users.T_Users.IsLocked"><a routerLink="/admin/feedback/viewfb/{{users.FId}}">View Feedback</a></td>
+            </tr>
+            
+          </tbody>
         </table>
       </div>
 
-
-</div>
-
-  <router-outlet></router-outlet>
-  
-  <div class="footer bg-dark">
-      <div class="footer-copyright text-center py-2">© 2020 Copyright
-        <a routerLink="/home">Shiksha.kdac.org</a>
-      </div> 
-  </div>
-  
-  
- 

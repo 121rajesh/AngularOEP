@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-a-feedback',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AFeedbackComponent implements OnInit {
 
-  constructor() { }
+  userData:any;
+  constructor( private authService:AuthService, private service:DataService) { }
 
   ngOnInit() {
+    this.service.GetFeedback()
+    .subscribe((result:any)=>{
+      // debugger
+      console.log(result.Data);
+      
+      this.userData = result.Data;
+      });  
+      
   }
 
 }

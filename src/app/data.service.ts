@@ -6,14 +6,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
   private getUsersURL =    "http://localhost:53940/api/Users";
-  private loginURl =    "http://localhost:53940/api/Login"
+  private loginURl =       "http://localhost:53940/api/Login"
   private userProfileURL = "http://localhost:53940/api/Users/"
-  private registerURl = "http://localhost:53940/api/Login/Register"
-  private forgotPwdURL ="http://localhost:53940/api/User/IsExist";
+  private registerURl =    "http://localhost:53940/api/Login/Register"
+  private forgotPwdURL =   "http://localhost:53940/api/User/IsExist";
   private generateOTPURL=  "http://localhost:53940/api/User/OTP";
   private changePwdURL=    "http://localhost:53940/api/User/UpdatePassword";
-  private subjectURL =  "http://localhost:53940/api/Subject";
-  private addQuesURL = "http://localhost:53940/api/Question";
+  private subjectURL =     "http://localhost:53940/api/Subject";
+  private addQuesURL =     "http://localhost:53940/api/Question";
+  private getFdkbckURL =   "http://localhost:53940/api/AFeedback";
+  private getResultsURL =  "http://localhost:53940/api/Results";
   constructor(public http:HttpClient) { }
 
   LoginUserData(userObj)
@@ -27,12 +29,11 @@ export class DataService {
   }
 
   //----------------- GETDATA ---------------------------------------------
-  UserData(userId:any)
+  UserData(userId)
   {
     return this.http.get(this.userProfileURL + userId)
   }
 
-  
   GetUsers()
   {
     return this.http.get(this.getUsersURL);
@@ -42,11 +43,24 @@ export class DataService {
   {
     return this.http.get(this.subjectURL);
   }
-  GetSubject(subId:any)
+  GetSubject(subId)
   {
     return this.http.get("http://localhost:53940/api/Subject/"+subId);
   }
 
+  GetResults()
+  {
+    return this.http.get(this.getResultsURL);
+  }
+  GetResult(resId)
+  {
+    return this.http.get("http://localhost:53940/api/Results/"+resId);
+  }
+
+  GetFeedback()
+  {
+    return this.http.get(this.getFdkbckURL);
+  }
   //----------------- ADD MODIFY DATA ---------------------------------------------
   AddSubject(subObj)
   {

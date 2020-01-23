@@ -38,7 +38,7 @@
          </span>
         <form #myForm="ngForm" (ngSubmit)="Validation(myForm.value)" class="container">
           
-            <div class="container" style="padding-right: 25%; color:rgb(114, 150, 161)">
+            <div class="container" style=" color:rgb(114, 150, 161)">
               <label  for="EmailId"><b>Username</b></label>
               <input class="form-control" ngModel type="email" placeholder="Enter Username" id="EmailId" required email  name="EmailId" #EmailId="ngModel" #spy>
                 <br>
@@ -48,7 +48,7 @@
                       Email id is required.
                   </div>
                   <div *ngIf="EmailId.errors.email">
-                      Email Id must be valid.
+                      Email Id must be valid. 
                   </div>
               </div>
               <label for="Password"><b>Password</b></label>

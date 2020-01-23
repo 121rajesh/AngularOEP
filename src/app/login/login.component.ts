@@ -70,11 +70,11 @@ loginUserData ={}
         debugger
         if(result1.Data.RoleId == 2)
         {
-        this.router.navigate(['/user/dashboard'])
+        this.router.navigate(['/user/home'])
         }
         else
         {
-          this.router.navigate(['/admin/dashboard']);
+          this.router.navigate(['/admin/home']);
         }
       } 
       else 

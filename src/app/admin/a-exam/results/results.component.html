@@ -1,61 +1,31 @@
 
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" routerLink ="/home">Shiksha</a>
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/dashboard">DashBoard</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/home">Home</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Modules
-        </a> 
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink ="/admin/modules/managesubjects">Manage Subjects</a>
-          <a class="dropdown-item" routerLink ="/admin/modules/addsubject">Add Subject</a>
-        </div>
-      </li>  
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/users">Users</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Exams
-        </a> 
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink ="/admin/exam/results">Results</a>
-          <!-- <a class="dropdown-item" routerLink ="">Set Paper Format</a> -->
-        </div>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/feedback">Feedback</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/admin/manageprofile">Manage Profile</a>
-      </li> 
-    </ul> 
-    <ul style="padding-left: 532px;">
-      <div>
-       <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" >
-      </div>
-    </ul>
-    <ul class="nav navbar-right">
-        <li>
-            <a class="nav-link" routerLink="/login">Logout</a>
-        </li>
-    </ul>
-    
   
-  </nav> 
-
 <br><br><br><br>
 
-<div class="bg-img">
+<!-- <div class="bg-img"> -->
       <h1>Exam Results of all Users</h1>
-          <div class="content">
-           <table style="text-align: center; width: 100%;">
+          <!-- <div class="content"> -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Subject</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let users of resultData"  >
+                  <td *ngIf="!users.IsLocked">{{users.Name}}</td>
+                  <td *ngIf="!users.IsLocked">{{users.EmailId}}</td>
+                  <td *ngIf="!users.IsLocked">{{users.SubName}}</td>
+                  <td *ngIf="!users.IsLocked">{{users.CntCorrectAns}}</td>  
+                    <!-- <td *ngIf="!users.T_Users.IsLocked"><a routerLink="/admin/feedback/viewfb/{{users.FId}}">View Feedback</a></td> -->
+                </tr>
+                
+              </tbody>
+            </table>
+            <!-- <table style="text-align: center; width: 100%;">
               <tr style="font-size:x-large;">
                 <td>Name</td>
                 <td>Email</td>
@@ -70,47 +40,11 @@
                 <td>12</td>
                 <td>5.43</td>
               </tr> 
-              <tr>
-                <td>shrey1</td>
-                <td>shrey@123</td>
-                <td>Oprating Sys</td>
-                <td>12</td>
-                <td>5.43</td>
-              </tr> 
-              <tr>
-                <td>shrey1</td>
-                <td>shrey@123</td>
-                <td>Database Tech</td>
-                <td>12</td>
-                <td>5.43</td>
-              </tr> 
-              <tr>
-                <td>shrey1</td>
-                <td>shrey@123</td>
-                <td>C ++</td>
-                <td>12</td>
-                <td>5.43</td>
-              </tr> 
-              <tr>
-                <td>shrey1</td>
-                <td>shrey@123</td>
-                <td>Core Java</td>
-                <td>12</td>
-                <td>5.43</td>
-              </tr>        
-            </table> 
-          </div>
+                      
+            </table>  -->
+          <!-- </div> -->
 
   
-</div>
+<!-- </div> -->
 
-  <router-outlet></router-outlet>
-  
-  <div class="footer bg-dark">
-      <div class="footer-copyright text-center py-2">© 2020 Copyright
-        <a routerLink="/home">Shiksha.kdac.org</a>
-      </div> 
-  </div>
-  
-  
  

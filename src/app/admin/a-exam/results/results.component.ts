@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-results',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
+  resultData:any
+  constructor(private service:DataService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.service.GetResults()
+    .subscribe((result:any)=>{
+      console.log(result);
+      this.resultData = result.Data;
+    })
   }
 
 }

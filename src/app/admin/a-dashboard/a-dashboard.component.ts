@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-a-dashboard',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ADashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private AuthService:AuthService, private router:Router) { }
 
   ngOnInit() {
   }
