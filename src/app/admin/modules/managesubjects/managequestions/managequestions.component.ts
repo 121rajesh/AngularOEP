@@ -13,7 +13,8 @@ export class ManagequestionsComponent implements OnInit {
   subject:any
   id:any  
   message:string
- QuesAdded:any
+  quesAdded:any
+  // cnt:number
   constructor(public service:DataService, public route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -30,6 +31,7 @@ export class ManagequestionsComponent implements OnInit {
   addQues(quesObj:NgForm)
   {
     debugger
+    //this.cnt = 0;
     quesObj.value.SubId = this.id;
     this.service.AddQuestions(quesObj.value)
     .subscribe((result:any)=>{
@@ -37,8 +39,8 @@ export class ManagequestionsComponent implements OnInit {
       if (result.Status == "success") {
         this.message = "Question added"
         alert(this.message)
-        // quesObj.value=null
-        
+        //++this.cnt
+        //this.quesAdded = ("Question "+this.cnt);
         quesObj.resetForm()
 
       }

@@ -58,18 +58,18 @@
  <h1 style="color: white; padding-left: 20px;">Admin's profile mgmnt</h1>
 
  <div class="content">        
-    <form #myFrom ="ngForm" (ngSubmit)="register(myFrom)"> 
+    <form #myFrom ="ngForm" (ngSubmit)="update(myFrom)"> 
        <label for="Name"><b>Name</b></label>
-       <input ngModel type="text" placeholder="Enter full name" name="Name" required class="form-control" >
+       <input [(ngModel)]="userObj.Name" type="text"  name="Name" required class="form-control" >
    
        <label for="EmailId"><b>Email</b></label>
-       <input ngModel type="email" placeholder="example@gmail.com" name="EmailId" required class="form-control" ><br>
+       <input [(ngModel)]="userObj.EmailId" readonly type="email"  name="EmailId" required class="form-control" ><br>
        
        <label for="Password"><b>New Password</b></label>
-       <input ngModel type="password" name="Password" required class="form-control" >
+       <input  type="password" name="Password" required class="form-control" >
      
        <label for="Password"><b>Confirm Password</b></label>
-       <input ngModel type="password" name="Password" required class="form-control" > <br>
+       <input  type="password" name="Password" required class="form-control" > <br>
        <div style="padding-left: 450px;">
           <button type="submit" class="btn btn-success">Submit</button>
        </div>
@@ -82,15 +82,3 @@
   
 </div>
 </div>
-
-
-  <router-outlet></router-outlet>
-  
-  <div class="footer bg-dark">
-      <div class="footer-copyright text-center py-2">© 2020 Copyright
-        <a routerLink="/home">Shiksha.kdac.org</a>
-      </div> 
-  </div>
-  
-  
- 

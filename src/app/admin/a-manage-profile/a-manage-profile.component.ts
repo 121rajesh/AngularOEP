@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-a-manage-profile',
@@ -6,10 +8,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./a-manage-profile.component.css']
 })
 export class AManageProfileComponent implements OnInit {
-
-  constructor() { }
+  UserId:any
+  userObj:any
+  constructor(private service:DataService, private activatedRoute:ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
+    // this.activatedRoute.params
+    // .subscribe((params:any)=>{
+      this.UserId = sessionStorage.getItem("UserId");
+      console.log(this.UserId);
+    //   console.log(params);
+      
+      
+      this.service.UserData(this.UserId)
+      .subscribe((result:any)=>{
+        this.userObj = result.Data;
+        console.log(this.userObj);
+        
+      })
+    // })
+
   }
 
+  update()
+  {
+    this.service.UpdateUser(this.UserId,this.userObj)
+    .subscribe((result:any)=>{
+      if(result.affectedRows>0)
+      {
+        this.router.navigate(['home']);
+      }
+    })
+  }
 }
