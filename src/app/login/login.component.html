@@ -31,16 +31,16 @@
     </div>
     
     
-    
-      <div class="container1  "> 
+    <!-- <div class="box  " *ngIf="!this.auth_service.isLoggedIn()"></div> -->
+      <div class="box  " *ngIf="!this.auth_service.isLoggedIn()"> 
          <span>
            {{message}}
          </span>
         <form #myForm="ngForm" (ngSubmit)="Validation(myForm.value)" class="container">
           
-            <div class="container" style=" color:rgb(114, 150, 161)">
+            <div class="container" style=" color:black">
               <label  for="EmailId"><b>Username</b></label>
-              <input class="form-control" ngModel type="email" placeholder="Enter Username" id="EmailId" required email  name="EmailId" #EmailId="ngModel" #spy>
+              <input class="form-control" ngModel type="email" placeholder="Enter Email id" id="EmailId" required email  name="EmailId" #EmailId="ngModel" #spy>
                 <br>
                 
                 <div *ngIf="EmailId.invalid && (EmailId.dirty || EmailId.touched || EmailId.pristine)" class="alert alert-danger">

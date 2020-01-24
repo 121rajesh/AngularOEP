@@ -98,6 +98,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
       { path: 'user/performance',component:PerformanceComponent, canActivate:[AuthService] },
       { path: 'user/feedback',component:FeedbackComponent, canActivate:[AuthService] },
       //{ path: 'admin/dashboard',component:ADashboardComponent, canActivate:[AuthService] },
+      { path: 'admin/home',component:HomeComponent, canActivate:[AuthService] },
       { path: 'admin/modules',component:ModulesComponent, canActivate:[AuthService] },
       { path: 'admin/modules/addsubject',component:AddsubjectComponent, canActivate:[AuthService] },
       { path: 'admin/modules/managesubjects',component:ManagesubjectsComponent, canActivate:[AuthService] },

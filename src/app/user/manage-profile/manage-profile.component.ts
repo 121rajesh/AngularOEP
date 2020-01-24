@@ -16,7 +16,7 @@ export class ManageProfileComponent implements OnInit {
       debugger
       console.log(result);
       
-      this.userProfileData = result;
+      this.userProfileData = result.Data;
     })
   }
 

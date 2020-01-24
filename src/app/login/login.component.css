@@ -14,7 +14,15 @@
  /*   width: 100%; /* Full width */
  /*   padding: 20px; /* Some padding */
  /* } */ 
-
+ /* body {
+  font-family: Arial, Helvetica, sans-serif;
+} */
+button:hover {
+  opacity: 0.8;
+}
+  /* form {
+    border: 3px solid #f1f1f1;
+  } */
  .container1 {
     position: absolute;
      right: 0;
@@ -70,3 +78,19 @@
     padding: 20px; /* Some padding */
   }
 /* <img src="assets/images/pen1.jpg" alt="Notebook" style="width: 100%;"> */
+
+.box {
+  position: absolute;
+  /* text-align: center; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 400px;
+  padding: 40px;
+  padding-top: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(23, 26, 27);
+  border-radius: 8px;
+} 
+/* rgb(23, 25, 26) */
