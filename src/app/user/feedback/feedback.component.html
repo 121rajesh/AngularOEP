@@ -11,7 +11,7 @@
        <h1 style="color: white; padding-left: 20px;">Feedback</h1>
        <div class="content">
             
-            <form action="" method="POST" role="form">            
+            <form #myform="ngForm" (ngSubmit)="addfeedback(myform.form.value)">            
               <div class="form-group">
                 <textarea name="" id="input" class="form-control" rows="7" placeholder="your precious feedback if any,"></textarea>
               </div>

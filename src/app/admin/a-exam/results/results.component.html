@@ -18,7 +18,7 @@
                 <tr *ngFor="let users of resultData"  >
                   <td *ngIf="!users.IsLocked">{{users.Name}}</td>
                   <td *ngIf="!users.IsLocked">{{users.EmailId}}</td>
-                  <td *ngIf="!users.IsLocked">{{users.SubName}}</td>
+                  <td *ngIf="!users.IsLocked" routerLink="/">{{users.SubName}}</td>
                   <td *ngIf="!users.IsLocked">{{users.CntCorrectAns}}</td>  
                     <!-- <td *ngIf="!users.T_Users.IsLocked"><a routerLink="/admin/feedback/viewfb/{{users.FId}}">View Feedback</a></td> -->
                 </tr>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { DataService } from './data.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'FinalProjectFE';
-
+  subjects:any
   /**
    *
    */
-  constructor(private AuthService:AuthService, private router:Router) {
+  constructor(private AuthService:AuthService, private router:Router,private service:DataService) {
     
     
   }
@@ -47,6 +48,11 @@ export class AppComponent {
       this.router.navigate(['/login']);
     }
     
-    
-  }
+    this.service.GetSubjects()
+    .subscribe((subjectdata:any)=>{
+      
+      this.subjects = subjectdata.Data;
+      console.log(this.subjects);
+  })
+}
 }

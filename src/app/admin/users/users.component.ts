@@ -9,6 +9,7 @@ import { DataService } from 'src/app/data.service';
 })
 export class UsersComponent implements OnInit {
   userData:any;
+  
   constructor( private authService:AuthService, private service:DataService) { }
 
   ngOnInit() {
@@ -28,6 +29,7 @@ export class UsersComponent implements OnInit {
     // }
     // else
     // {user.IsLocked="true";}
+    
     user.IsLocked=!user.IsLocked
     this.service.UpdateUser(user.UserId,user)
     .subscribe((result:any)=>{
@@ -37,4 +39,5 @@ export class UsersComponent implements OnInit {
     })
   }
 
+  
 }

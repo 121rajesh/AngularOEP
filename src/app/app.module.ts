@@ -14,7 +14,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HistorylogComponent } from './historylog/historylog.component';
 import { OnlineusersComponent } from './onlineusers/onlineusers.component';
-import { RoleComponent } from './role/role.component';
 import { ExamComponent } from './exam/exam.component';
 //======================= Basic User components ===============================================//
 import { DashboardComponent } from './user/dashboard/dashboard.component';
@@ -40,6 +39,8 @@ import { EditComponent } from './admin/modules/managesubjects/edit/edit.componen
 import { ManagequestionsComponent } from './admin/modules/managesubjects/managequestions/managequestions.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ReviewPaperComponent } from './admin/a-exam/review-paper/review-paper.component';
+
 
 
 @NgModule({
@@ -53,7 +54,6 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     DashboardComponent,
     HistorylogComponent,
     OnlineusersComponent,
-    RoleComponent,
     ExamComponent,
     ManageProfileComponent,
     SamplePaperComponent,
@@ -74,7 +74,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     EditComponent,
     ManagequestionsComponent,
     ForgotPasswordComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ReviewPaperComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -108,11 +110,11 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
       { path: 'admin/users/manageusers',component:ManageuserComponent, canActivate:[AuthService] },
       { path: 'admin/exam',component:AExamComponent, canActivate:[AuthService] },
       { path: 'admin/exam/results',component:ResultsComponent, canActivate:[AuthService] },
+      { path: 'admin/exam/reviewpaper',component:ReviewPaperComponent, canActivate:[AuthService] },
       { path: 'admin/feedback',component:AFeedbackComponent, canActivate:[AuthService] },
       { path: 'admin/feedback/viewfb/:FId',component:ViewfeedbackComponent, canActivate:[AuthService] },      
       { path: 'admin/manageprofile',component:AManageProfileComponent, canActivate:[AuthService] },
       { path: 'forgotpassword', component:ForgotPasswordComponent},
-      { path: 'role',component:RoleComponent },
       { path: 'editprofile', component:EditComponent, canActivate:[AuthService]}
     ])
   ],

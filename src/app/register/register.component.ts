@@ -15,23 +15,50 @@ export class RegisterComponent implements OnInit {
 
   register(DataFromUI:any)
   {
-    console.log("register");
-    let result = this.service.RegisterData(DataFromUI.form.value);
-
-    result.subscribe((data:any)=>{
-      if(data.error == null)
+    let formData =DataFromUI.form.value;
+    console.log(formData);
+    if(formData.Password == formData.CnfPassword)
+    {
+      if (sessionStorage.getItem("RoleId") == "1")
       {
-        this.message = data.Status;
-        console.log(data.Data.UserId);
-        this.router.navigate(['login']);
+        formData.RoleId = 1;
       }
       else
       {
-        console.log(data);
-        this.message = data.Status;
-        console.log(data.Data.Err);
+        formData.RoleId = 2;
       }
-    })
+      let result = this.service.RegisterData(formData);
+
+      result.subscribe((data:any)=>{
+      if(data.error == null)
+        {
+          this.message = data.Status;
+          console.log(data.Data.UserId);
+          if (formData.RoleId == 1) 
+          {
+            this.router.navigate(['home']);
+            alert("Admin registered Successfully!!")
+          }
+          else 
+          {
+            alert(" Registered Successfully!!")
+            this.router.navigate(['login']);  
+          }
+          
+        }
+        else
+        {
+          console.log(data);
+          this.message = data.Status;
+          console.log(data.Data.Err);
+        }
+      })
+    }
+    else
+    {
+      this.message = "Password should match!"
+    }
+    
   }
 
 }

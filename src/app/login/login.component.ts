@@ -10,7 +10,7 @@ import {HttpClientModule} from '@angular/common/http'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-message:string
+//message:string
 loginUserData ={}
   msg: string;
   constructor(public service:DataService, public auth_service:AuthService, public router:Router) { }
@@ -35,9 +35,15 @@ loginUserData ={}
         
     //   }
     // })
+    console.log(credentials.EmailId);
+    console.log(credentials.Password);
+    
     if( credentials.EmailId ==null || credentials.Password ==null )
       {
+        debugger
           this.msg = "Username/Password is required!!";
+          console.log(this.msg);
+          
       }
       else
       {
@@ -47,6 +53,7 @@ loginUserData ={}
   }
   Login(credentials: {EmailId:any; Password:any;})
   {
+    debugger
      // throw new Error("Method not implemented.");
     let isLoggedIn:any;
     let result=this.service.LoginUserData(credentials)
@@ -60,6 +67,8 @@ loginUserData ={}
       else 
       {
         this.msg =" Username / Password is invalid";  
+        console.log(this.msg);
+        
       }
 
       if (isLoggedIn)

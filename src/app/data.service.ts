@@ -52,7 +52,7 @@ export class DataService {
   {
     return this.http.get(this.getResultsURL);
   }
-  GetResult (resId)
+  GetResult(resId)
   {
     return this.http.get("http://localhost:53940/api/Results/"+resId);
   }
@@ -60,6 +60,11 @@ export class DataService {
   GetFeedback()
   {
     return this.http.get(this.getFdkbckURL);
+  }
+
+  GetQuestion(qId)
+  {
+    return this.http.get("http://localhost:53940/api/Questions/"+qId);
   }
   //----------------- ADD MODIFY DATA ---------------------------------------------
   AddSubject(subObj)

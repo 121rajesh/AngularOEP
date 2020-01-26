@@ -11,5 +11,8 @@ export class AExamComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  paperFormat(formValue)
+  {
+    
+  }
 }
