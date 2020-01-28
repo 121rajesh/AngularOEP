@@ -16,6 +16,9 @@ export class DataService {
   private addQuesURL =     "http://localhost:53940/api/Question";
   private getFdkbckURL =   "http://localhost:53940/api/AFeedback";
   private getResultsURL =  "http://localhost:53940/api/Results";
+  private submitAnsURL =   "http://localhost:53940/api/Question/score";
+  private postfeedbkURL = "http://localhost:53940/api/AFeedback";
+  
   constructor(public http:HttpClient) { }
 
   LoginUserData(userObj)
@@ -62,10 +65,20 @@ export class DataService {
     return this.http.get(this.getFdkbckURL);
   }
 
-  GetQuestion(qId)
+  GetQuestionBySubId(subId)
+  {
+    return this.http.get("http://localhost:53940/api/Questions/"+subId);
+  }
+  GetQuestionByQId(qId)
   {
     return this.http.get("http://localhost:53940/api/Questions/"+qId);
   }
+
+  GetPDF()
+  {
+    return this.http.get("http://localhost:54881/api/Subject/pdf");
+  }
+
   //----------------- ADD MODIFY DATA ---------------------------------------------
   AddSubject(subObj)
   {
@@ -74,9 +87,15 @@ export class DataService {
 
   AddQuestions(quesObj)
   {
+    debugger
     return this.http.post(this.addQuesURL,quesObj);
   }
 
+  EditQuestions(queId,quesObj)
+  {
+    debugger
+    return this.http.put(this.addQuesURL+"/"+queId,quesObj);
+  }
   UpdatePwd(userObj)
   {
     return this.http.put(this.forgotPwdURL,userObj);
@@ -92,7 +111,23 @@ export class DataService {
     
     return this.http.put("http://localhost:53940/api/Users/"+userId,userObj);
   }
-//----------------------REMOVE REQUESTS--------------------------------------------
+
+  SubmitAns(obj:any)
+  {
+    return this.http.post(this.submitAnsURL,obj);
+  }
+
+  insertFeedback(obj)
+  {
+    return this.http.post(this.postfeedbkURL,obj);
+  }
+
+  SendScore(obj:any)
+  {
+    return this.http.post(this.getResultsURL,obj);
+  }
+
+  //----------------------REMOVE REQUESTS--------------------------------------------
   DeleteUser(userId)
   {
     return this.http.delete(this.userProfileURL+userId);

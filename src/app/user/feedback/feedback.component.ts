@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor() { }
+  checked:boolean
+  constructor(public service:DataService,public router:Router) { }
 
   ngOnInit() {
   }
 
+  addfeedback(datafromUI:any)
+  {
+    this.checked = true;
+    console.log(datafromUI);
+    
+    datafromUI.UserId = parseInt(sessionStorage.getItem("UserId"))
+    this.service.insertFeedback(datafromUI)
+    .subscribe((fetcheddata:any)=>{
+      console.log(fetcheddata.Status)
+      if(fetcheddata.Status =="success")
+      {
+        // this.checked = true;
+        alert("Feedback submited.Thank your for your response :)")
+        this.router.navigate(['/home'])
+        
+      }
+    })
+  }
 }

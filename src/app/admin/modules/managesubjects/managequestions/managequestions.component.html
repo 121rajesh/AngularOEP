@@ -40,7 +40,10 @@
                     Question 3
                 </li>
             </ul> -->
-
+            <div *ngFor="let ques of questions;index as i">
+             <button type="button" (click)="editQuestion(ques)">Question {{i+1}}</button>
+             
+            </div>
     </div>
 
     <div class="content2">
@@ -61,11 +64,35 @@
         <input ngModel type="text"  name="CorrectAns" required class="form-control" ><br>
         <div style="padding-left: 200px;">
            <button type="submit" class="btn btn-success">Submit</button>
+           
         </div>
-      </form>
- 
+        </form>
+        
     </div>
+    <div class="content2" *ngIf="this.editQues">
+      <form #myFrom ="ngForm" (ngSubmit)="updateQues(myFrom.value)"> 
+              <label for="Question"><b>Question</b></label>
+              <input [(ngModel)]="this.specificQues.Question" type="text"  name="Question" required class="form-control" >
+                
+              <label for="Opt1"><b>Opt 1</b></label>
+              <input [(ngModel)]="this.specificQues.Opt1" type="text"  name="Opt1" required class="form-control" >
+              <label for="Opt2"><b>Opt 2</b></label>
+              <input [(ngModel)]="this.specificQues.Opt2" type="text"  name="Opt2" required class="form-control" >
+              <label for="Opt3"><b>Opt 3</b></label>
+              <input [(ngModel)]="this.specificQues.Opt3" type="text"  name="Opt3" required class="form-control" >
+              <label for="Opt4"><b>Opt 4</b></label>
+              <input [(ngModel)]="this.specificQues.Opt4" type="text"  name="Opt4" required class="form-control" >
+              <label for="CorrectAns"><b>Correct Ans</b></label>
+              <input [(ngModel)]="this.specificQues.CorrectAns" type="text"  name="CorrectAns" required class="form-control" ><br>
+              <div style="padding-left: 200px;">
+                 <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <button type="button" (click)="cancel()" class="btn btn-danger">Cancel</button>
+              </div>
+              
+              </form>
+      </div>
 </div>
+<br><br><br>
 
   
   

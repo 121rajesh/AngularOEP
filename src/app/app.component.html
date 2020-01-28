@@ -50,7 +50,7 @@
         </a> 
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
             <div *ngFor="let sub of subjects">
-            <a style="color: black;" class="dropdown-item" routerLink="/user/exam/{{sub.SubName}}">{{sub.SubName}}</a>
+            <a style="color: black;" class="dropdown-item" routerLink="/user/exam/{{sub.SubId}}">{{sub.SubName}}</a>
           </div> 
         </div>
       <li class="active"> 
@@ -149,7 +149,7 @@
 
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet><br><br>
 
 <div class="footer bg-dark">
     <div class="footer-copyright text-center py-2">© 2020 Copyright

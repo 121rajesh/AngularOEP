@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-performance',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerformanceComponent implements OnInit {
 
-  constructor() { }
+  result:any
+  id:any
+constructor(public service:DataService, public router:Router) { }
 
-  ngOnInit() {
-  }
+ngOnInit() {
+  console.log("inside performance TS");
+  
+  debugger
+  this.id = parseInt(sessionStorage.getItem("UserId"))
+  this.service.GetResult(this.id)
+  .subscribe((resultdata:any)=>{
+    
+    if(resultdata.Data != null)
+    {
+      this.result = resultdata.Data
+    console.log(this.result);
+    }
+    else
+    {
+      console.log(resultdata.Status);
+      alert(resultdata.Status)
+    }
+    
+  })
+}
 
 }

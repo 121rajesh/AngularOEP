@@ -58,9 +58,13 @@ loginUserData ={}
     let isLoggedIn:any;
     let result=this.service.LoginUserData(credentials)
     result.subscribe((result1:any)=>{
-      //debugger
+      debugger
       console.log(result1);
-      if(credentials.EmailId == result1.Data.EmailId && credentials.Password == result1.Data.Password)
+      // if(credentials.EmailId == result1.Data.EmailId && credentials.Password == result1.Data.Password)
+      // {
+      //   isLoggedIn = true;
+      // }
+      if(result1.Status == "Success")
       {
         isLoggedIn = true;
       }

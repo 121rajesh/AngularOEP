@@ -52,7 +52,7 @@ export class AppComponent {
     .subscribe((subjectdata:any)=>{
       
       this.subjects = subjectdata.Data;
-      console.log(this.subjects);
+     // console.log(this.subjects);
   })
 }
 }

@@ -30,7 +30,6 @@ import { AExamComponent } from './admin/a-exam/a-exam.component';
 import { AFeedbackComponent } from './admin/a-feedback/a-feedback.component';
 import { AManageProfileComponent } from './admin/a-manage-profile/a-manage-profile.component';
 import { UExamComponent } from './user/u-exam/u-exam.component';
-import { ManageuserComponent } from './admin/users/manageuser/manageuser.component';
 import { ResultsComponent } from './admin/a-exam/results/results.component';
 import { AddsubjectComponent } from './admin/modules/addsubject/addsubject.component';
 import { ViewfeedbackComponent } from './admin/a-feedback/viewfeedback/viewfeedback.component';
@@ -40,6 +39,7 @@ import { ManagequestionsComponent } from './admin/modules/managesubjects/manageq
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ReviewPaperComponent } from './admin/a-exam/review-paper/review-paper.component';
+import { PaperComponent } from './user/u-exam/paper/paper.component';
 
 
 
@@ -66,7 +66,6 @@ import { ReviewPaperComponent } from './admin/a-exam/review-paper/review-paper.c
     AFeedbackComponent,
     AManageProfileComponent,
     UExamComponent,
-    ManageuserComponent,
     ResultsComponent,
     AddsubjectComponent,
     ViewfeedbackComponent,
@@ -76,6 +75,7 @@ import { ReviewPaperComponent } from './admin/a-exam/review-paper/review-paper.c
     ForgotPasswordComponent,
     EditProfileComponent,
     ReviewPaperComponent,
+    PaperComponent,
 
   ],
   imports: [
@@ -94,11 +94,13 @@ import { ReviewPaperComponent } from './admin/a-exam/review-paper/review-paper.c
       { path: 'onlineusers',component:OnlineusersComponent, canActivate:[AuthService] },
       { path: 'exam',component:ExamComponent, canActivate:[AuthService] },
       //{ path: 'user/dashboard',component:DashboardComponent, canActivate:[AuthService] },
-      { path: 'user/exam',component:UExamComponent, canActivate:[AuthService] },
+      { path: 'user/exam/:SubId',component:UExamComponent, canActivate:[AuthService] },
+      { path: 'user/home',component:HomeComponent, canActivate:[AuthService] },
       { path: 'user/manageprofile',component:ManageProfileComponent, canActivate:[AuthService] },
       { path: 'user/samplepapers',component:SamplePaperComponent, canActivate:[AuthService] },
       { path: 'user/performance',component:PerformanceComponent, canActivate:[AuthService] },
       { path: 'user/feedback',component:FeedbackComponent, canActivate:[AuthService] },
+      { path: 'user/uexam/paper/:SubId',component:PaperComponent, canActivate:[AuthService] },
       //{ path: 'admin/dashboard',component:ADashboardComponent, canActivate:[AuthService] },
       { path: 'admin/home',component:HomeComponent, canActivate:[AuthService] },
       { path: 'admin/modules',component:ModulesComponent, canActivate:[AuthService] },
@@ -107,7 +109,6 @@ import { ReviewPaperComponent } from './admin/a-exam/review-paper/review-paper.c
       { path: 'admin/modules/managesubjects/edit',component:EditComponent, canActivate:[AuthService] },
       { path: 'admin/modules/managesubjects/manageque/:SubId',component:ManagequestionsComponent, canActivate:[AuthService] },
       { path: 'admin/users',component:UsersComponent, canActivate:[AuthService] },
-      { path: 'admin/users/manageusers',component:ManageuserComponent, canActivate:[AuthService] },
       { path: 'admin/exam',component:AExamComponent, canActivate:[AuthService] },
       { path: 'admin/exam/results',component:ResultsComponent, canActivate:[AuthService] },
       { path: 'admin/exam/reviewpaper',component:ReviewPaperComponent, canActivate:[AuthService] },

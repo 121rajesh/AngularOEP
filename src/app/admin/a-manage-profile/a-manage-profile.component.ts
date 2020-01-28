@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AManageProfileComponent implements OnInit {
   UserId:any
   userObj:any
+  message:any
   constructor(private service:DataService, private activatedRoute:ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
@@ -30,14 +31,32 @@ export class AManageProfileComponent implements OnInit {
 
   }
 
-  update()
+  update(UIData:any)
   {
-    this.service.UpdateUser(this.UserId,this.userObj)
-    .subscribe((result:any)=>{
-      if(result.affectedRows>0)
+    debugger
+    console.log(UIData);
+    
+    if(UIData.Password == this.userObj.Password)
+    {
+      if (UIData.NewPassword == UIData.CnfPassword) 
       {
+        this.service.UpdateUser(this.UserId,this.userObj)
+    .subscribe((result:any)=>{
+      if(result.Status == "Success")
+      {
+        alert("Profile updated successfully!!")
         this.router.navigate(['home']);
       }
-    })
+      })
+      }
+      else
+      {
+        this.message="Password mis-match!!";
+      }
+    }
+    else
+    {
+      this.message = "Incorrect password!!!";
+    }
   }
 }

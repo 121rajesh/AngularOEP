@@ -38,8 +38,8 @@ UserData:any
     sessionStorage.setItem("RoleId", data.Data.RoleId);
     sessionStorage.setItem("userData", JSON.stringify(data));
     this.UserData = data;
-    this.router.navigate(['/user/dashboard']);
-   return
+    //this.router.navigate(['/user/dashboard']);
+   
   }
 
   Logout()

@@ -26,7 +26,7 @@ export class ReviewPaperComponent implements OnInit {
   displayPaper(subId)
   {
     this.showPaper = true;
-    this.service.GetQuestion(subId).subscribe((questionData:any)=>{
+    this.service.GetQuestionBySubId(subId).subscribe((questionData:any)=>{
       if(questionData.Data !=null || questionData.Data!=undefined)
       this.questions = questionData.Data;
       console.log(this.questions);

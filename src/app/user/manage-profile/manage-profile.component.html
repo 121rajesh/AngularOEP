@@ -2,30 +2,57 @@
 <h1>Manage Profile</h1>
 
 
-<form role="form" #myForm="ngForm" (ngSubmit)="FormValidation(myForm.value)">
+<!-- <form role="form" #myForm="ngForm" (ngSubmit)="FormValidation(myForm.value)">
   <div class="box">
-      <!-- <div class="imgcontainer">
-          <img src="./assets/icons-user-profile.png" style="height: 150px; width: 150px;" alt="Online Insurance Management System_Icon"
-              class="Icon">
-      </div> -->
       <h2 style="color: rgb(124, 8, 8);"><b>{{userProfileData.EmailId}}</b></h2>
       <div class="container" style="text-align: left">
           <label><b>Email Address</b></label><br>
           <div>{{this.userProfileData.EmailId}}</div>
-          <br>
           <label><b>Phone Number</b></label><br>
           <div>+91 {{this.userProfileData.MobileNo}}</div>
-          <br>
-          <!-- <label><b>Date of Birth</b></label><br>
-          <div>{{this.UserProfileData.dob}}</div>
-          <br> -->
           <button type="submit" routerLink="/editprofile/{{this.userProfileData.UserId}}">Edit Profile</button><br>
-          <!-- <label><input type="checkbox" checked="checked" name="remember"> Remember me</label><br> -->
           <button type="button"  class="cancelbtn" routerLink="/MyOrder">My Order</button><br>
           <b style="position: absolute; left: 83px;">{{msg}}</b>
       </div>
   </div>
+</form> -->
+
+ 
+
+ <div class="bg-img">
+  <br>
+ <h1 style="color: white; padding-left: 20px;">User's profile mgmnt</h1>
+
+ <div class="content">        
+    <form #myFrom ="ngForm" (ngSubmit)="update(myFrom)"> 
+       <label for="Name"><b>Name</b></label>
+       <input [(ngModel)]="userObj.Name" type="text"  name="Name" required class="form-control" >
+   
+       <label for="EmailId"><b>Email</b></label>
+       <input [(ngModel)]="userObj.EmailId" readonly type="email"  name="EmailId" required class="form-control" ><br>
+       
+       <label for="MobileNo"><b>Mobile No</b></label>
+       <input [(ngModel)]="userObj.MobileNo" readonly type="number"  name="MobileNo" required class="form-control" ><br>
+
+       <label for="Password"><b>Current Password</b></label>
+       <input ngModel type="password" name="Password" required class="form-control" >
+       
+       <label for="NewPassword"><b>New Password</b></label>
+       <input  type="password" name="NewPassword" required class="form-control" >
+     
+       <label for="CnfPassword"><b>Confirm Password</b></label>
+       <input  type="password" name="CnfPassword" required class="form-control" > <br>
+       <div style="padding-left: 450px;">
+          <button type="submit" class="btn btn-success">Submit</button>
+       </div>
+       
+     
+         <span>
+             {{message}}
+         </span>
 </form>
-<!-- <div class="copyright">All Rights Reserved. Copyright © Online Insurance Management System FoodWorks Ltd.</div> -->
+  
+</div>
+</div> 
 
 

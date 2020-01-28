@@ -1,95 +1,38 @@
-<!-- <p>dashboard works!</p>
-<br>
-<br>
-<br>
-
-<h1>user dashboard</h1>
- --> 
- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" routerLink ="/home">Shiksha</a>
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a class = "nav-link" routerLink ="/user/dashboard">DashBoard</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/home">Home</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/user/exam">Exam</a>
-      </li> 
-      <li class="active"> 
-        <a class = "nav-link" routerLink ="/user/samplepapers">Sample papers</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/user/performance">Performance</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/user/feedback">Feedback</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/user/manageprofile">Manage Profile</a>
-      </li> 
-    </ul>
-    <ul style="padding-left: 480px;">
-      <div>
-       <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" >
-      </div>
-    </ul>
-    <ul class="nav navbar-right">
-        <li>
-            <a class="nav-link" routerLink="/login">Logout</a>
-        </li>
-    </ul>
-    
-
-  </nav> 
-  
-
-<!-- woking navbar -->
-
-
-  <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" routerLink ="/home">Shiksha</a>
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a class = "nav-link" routerLink ="/home">Home</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="/exam">Exam</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="#">Sample papers</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="#" >Performance</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="#" >Feedback</a>
-      </li>
-      <li class="active">
-        <a class = "nav-link" routerLink ="#" style="padding-left: 690px;">Logout</a>
-      </li>
-   
-
-    <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" style="padding-left:2px;">
-  </ul>
-  </nav>
-   -->
- 
-  <!-- testing nav bar -->
-
 
 
 <br><br><br><br>
 <h1>Exam Page</h1>
+<div align="center" >
+          
+  <table border="1">
+    <tr>
+      <td>
+        <table style="height: 300px; width: 500px;" >
+          <tr>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td colspan="4" style="text-align: center;"><b>Subject    :   {{this.subject.SubName}}</b></td>
+          </tr>
+          <tr>
+            <td colspan="4" style="text-align: center;"><b>Duration    :   10 mins</b></td>
+          </tr>
+          <tr> 
+            <td colspan="4">
+              
+              <button type="button" class="btn btn-large btn-block btn-success" (click)="startExam()" >Start Exam</button>
+              
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  
+ </div>
 
-  <router-outlet></router-outlet>
-  
-  <div class="footer bg-dark">
-      <div class="footer-copyright text-center py-2">© 2020 Copyright
-        <a routerLink="/home">Shiksha.kdac.org</a>
-      </div> 
-  </div>
-  
-  
+
  

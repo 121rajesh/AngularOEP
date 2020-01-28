@@ -16,9 +16,13 @@ export class ResultsComponent implements OnInit {
     .subscribe((result:any)=>{
       console.log(result);
       this.resultData = result.Data;
-      console.log(this.resultData[3]);
+      //console.log(this.resultData[3]);
       
     })
+  }
+  sortByName()
+  {
+    this.resultData.Name.sort();  
   }
 
 }

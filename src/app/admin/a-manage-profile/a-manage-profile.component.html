@@ -58,7 +58,7 @@
  <h1 style="color: white; padding-left: 20px;">Admin's profile mgmnt</h1>
 
  <div class="content">        
-    <form #myFrom ="ngForm" (ngSubmit)="update(myFrom)"> 
+    <form #myFrom ="ngForm" (ngSubmit)="update(myFrom.value)"> 
        <label for="Name"><b>Name</b></label>
        <input [(ngModel)]="userObj.Name" type="text"  name="Name" required class="form-control" >
    
@@ -69,13 +69,13 @@
        <input [(ngModel)]="userObj.MobileNo" readonly type="number"  name="MobileNo" required class="form-control" ><br>
 
        <label for="Password"><b>Current Password</b></label>
-       <input  type="password" name="Password" required class="form-control" >
+       <input ngModel type="password" name="Password" required class="form-control" >
        
-       <label for="Password"><b>New Password</b></label>
-       <input  type="password" name="Password" required class="form-control" >
+       <label for="NewPassword"><b>New Password</b></label>
+       <input ngModel type="password" name="NewPassword" required class="form-control" >
      
-       <label for="Password"><b>Confirm Password</b></label>
-       <input  type="password" name="Password" required class="form-control" > <br>
+       <label for="CnPassword"><b>Confirm Password</b></label>
+       <input ngModel type="password" name="CnfPassword" required class="form-control" > <br>
        <div style="padding-left: 450px;">
           <button type="submit" class="btn btn-success">Submit</button>
        </div>
