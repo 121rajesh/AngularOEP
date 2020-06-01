@@ -20,17 +20,22 @@ export class FeedbackComponent implements OnInit {
     this.checked = true;
     console.log(datafromUI);
     
-    datafromUI.UserId = parseInt(sessionStorage.getItem("UserId"))
+    datafromUI.userId = parseInt(sessionStorage.getItem("UserId"))
+    console.log(datafromUI);
     this.service.insertFeedback(datafromUI)
     .subscribe((fetcheddata:any)=>{
-      console.log(fetcheddata.Status)
-      if(fetcheddata.Status =="success")
+      console.log(fetcheddata.status)
+      if(fetcheddata.status =="Success")
       {
         // this.checked = true;
         alert("Feedback submited.Thank your for your response :)")
         this.router.navigate(['/home'])
         
+      }else
+      {
+        alert("Feedback caanot be blank !!");
       }
+      
     })
   }
 }

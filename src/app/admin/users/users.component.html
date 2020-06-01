@@ -81,12 +81,12 @@
                 <tbody>
                   <tr *ngFor="let users of userData">
                     
-                    <td>{{users.Name}}</td>
-                    <td>{{users.EmailId}}</td>
-                    <td *ngIf="!users.IsLocked">Active</td>
-                    <td *ngIf="users.IsLocked">InActive</td>
-                    <td *ngIf="!users.IsLocked"><button class="btn btn-danger" (click)="manageUser(users)" >Delete</button></td>
-                    <td *ngIf="users.IsLocked"><button class="btn btn-success" (click)="manageUser(users)" >Activate</button></td>
+                    <td>{{users.name}}</td>
+                    <td>{{users.emailId}}</td>
+                    <td *ngIf="!users.isLocked">Active</td>
+                    <td *ngIf="users.isLocked">InActive</td>
+                    <td *ngIf="!users.isLocked"><button class="btn btn-danger" (click)="manageUser(users)" >Delete</button></td>
+                    <td *ngIf="users.isLocked"><button class="btn btn-success" (click)="manageUser(users)" >Activate</button></td>
                   </tr>
                   
                 </tbody>

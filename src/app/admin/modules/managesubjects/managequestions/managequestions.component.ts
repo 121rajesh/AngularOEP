@@ -32,16 +32,16 @@ export class ManagequestionsComponent implements OnInit {
        this.subId= params['SubId']});
     
     this.service.GetSubject(this.subId).subscribe((subjectData:any)=>{
-      if(subjectData.Data !=null || subjectData.Data!=undefined)
-      this.subject = subjectData.Data;
+      if(subjectData.data !=null || subjectData.data!=undefined)
+      this.subject = subjectData.data;
       //console.log(this.subject);
     })
 
     this.service.GetQuestionBySubId(this.subId).subscribe((questionData:any)=>{
-      if(questionData.Data !=null || questionData.Data!=undefined)
-      this.questions = questionData.Data;
+      if(questionData.data !=null || questionData.data!=undefined)
+      this.questions = questionData.data;
       console.log("check qid");
-      this.queId = this.questions.QueId;
+      this.queId = this.questions.queId;
       console.log(this.questions);
       console.log(this.queId);
     });
@@ -59,13 +59,13 @@ export class ManagequestionsComponent implements OnInit {
   //   debugger
   //   //this.cnt = 0;
   debugger
-    quesObj.value.SubId = this.subId;
+    quesObj.value.subId = this.subId;
     this.service.AddQuestions(quesObj.value)
     .subscribe((result:any)=>{
-      console.log(result.Status);
-      console.log(result.Data);
+      console.log(result.status);
+      console.log(result.data);
       
-      if (result.Status == "success") {
+      if (result.status == "Success") {
         this.message = "Question added"
         alert(this.message)
         this.ngOnInit();
@@ -89,7 +89,7 @@ export class ManagequestionsComponent implements OnInit {
     console.log("====================");
     console.log(ques);
 
-    this.queId = ques.QueId;
+    this.queId = ques.queId;
     console.log("qid");
     console.log(this.queId);
     
@@ -100,13 +100,13 @@ export class ManagequestionsComponent implements OnInit {
   {
     debugger
     console.log(questions.value);
-    questions.SubId = this.subId;
+    questions.subId = this.subId;
     this.service.EditQuestions(this.queId,questions)
     .subscribe((result:any)=>{
-      console.log(result.Status);
-      console.log(result.Data);
+      console.log(result.status);
+      console.log(result.data);
       
-      if (result.Status == "success") {
+      if (result.status == "success") {
         this.message = "Question Updated"
         alert(this.message)
         this.cancel();

@@ -15,7 +15,7 @@ export class ResultsComponent implements OnInit {
     this.service.GetResults()
     .subscribe((result:any)=>{
       console.log(result);
-      this.resultData = result.Data;
+      this.resultData = result.data;
       //console.log(this.resultData[3]);
       
     })

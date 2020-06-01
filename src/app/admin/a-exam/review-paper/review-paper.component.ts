@@ -16,7 +16,7 @@ export class ReviewPaperComponent implements OnInit {
 
   ngOnInit() {
     this.service.GetSubjects().subscribe((subjectData:any)=>{
-      this.subjects = subjectData.Data;
+      this.subjects = subjectData.data;
       console.log(this.subjects);
       
     })
@@ -27,8 +27,8 @@ export class ReviewPaperComponent implements OnInit {
   {
     this.showPaper = true;
     this.service.GetQuestionBySubId(subId).subscribe((questionData:any)=>{
-      if(questionData.Data !=null || questionData.Data!=undefined)
-      this.questions = questionData.Data;
+      if(questionData.data !=null || questionData.data!=undefined)
+      this.questions = questionData.data;
       console.log(this.questions);
       
     })

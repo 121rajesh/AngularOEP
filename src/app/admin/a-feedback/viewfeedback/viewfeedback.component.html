@@ -6,19 +6,19 @@
   <h1>View feedback of particular user</h1>
       <div class="content" *ngFor="let users of userData">
    
-        <div *ngIf="users.FId == this.fid ">
+        <div *ngIf="users.fdbkId == this.fid ">
               <table style="width: 30%;">
                   <tr>
                       <td>User Name</td>
-                      <td>{{users.T_Users.Name}}</td>
+                      <td>{{users.name}}</td>
                   </tr>
                   <tr>
                       <td>Email</td>
-                      <td>{{users.T_Users.EmailId}}</td>
+                      <td>{{users.emailId}}</td>
                   </tr>
               </table>
               <div>
-                {{users.Message}}
+                {{users.message}}
               </div>
             </div><br>
           

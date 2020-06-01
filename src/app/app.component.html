@@ -1,8 +1,5 @@
 
-
-
-
-<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top ">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top " >
   <a class="navbar-brand" routerLink ="/home">Shiksha</a>
   <ul class="nav navbar-nav">
     <li class="active">
@@ -22,15 +19,8 @@
     <li class="navbar-brand active" *ngIf="!this.AuthService.isLoggedIn()" style="padding-left: 870px;" >
       <a class="nav-link" routerLink="/login">Login</a>
     </li>
-    <!-- <li class="navbar-brand active" *ngIf="this.AuthService.isLoggedIn()" style="padding-left: 870px;" >
-      <a class="nav-link" routerLink="/logout">Logout</a>
-    </li> -->
-  </ul>
-  <!-- <li class="active" style="padding-left: 730px;">
-    <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar">
-  </li> -->
 
-  
+  </ul>
 
 </nav>
 
@@ -38,10 +28,7 @@
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" >
     <a class="navbar-brand" routerLink ="/home">Shiksha</a>
     <ul class="nav navbar-nav">
-      <!-- <li class="active">
-        <a class = "nav-link" routerLink ="/user/dashboard">DashBoard</a>
-      </li>  -->
-      <li class="active">
+     <li class="active">
         <a class = "nav-link" routerLink ="/home">Home</a>
       </li>
       <li class="nav-item dropdown">
@@ -50,9 +37,10 @@
         </a> 
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
             <div *ngFor="let sub of subjects">
-            <a style="color: black;" class="dropdown-item" routerLink="/user/exam/{{sub.SubId}}">{{sub.SubName}}</a>
+            <a style="color: black;" class="dropdown-item" routerLink="/user/exam/{{sub.subId}}">{{sub.subName}}</a>
           </div> 
         </div>
+      </li>
       <li class="active"> 
         <a class = "nav-link" routerLink ="/user/samplepapers">Sample papers</a>
       </li>
@@ -78,25 +66,13 @@
         </li>
     </ul>
      
-    <!-- <ul class="nav navbar-right">
-      <li class="navbar-brand active" *ngIf="this.AuthService.isLoggedIn()" style="padding-left: 870px;" >
-        <a class="nav-link" routerLink="/login">Login</a>
-      </li>
-      <li class="navbar-brand active" *ngIf="!this.AuthService.isLoggedIn()" style="padding-left: 870px;" >
-        <a class="nav-link" routerLink="/logout">Logout</a>
-      </li>
-    </ul> -->
-
-  </nav> 
+   </nav> 
 </div>
 
 <div *ngIf="this.AuthService.isAdmin()">
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
     <a class="navbar-brand" routerLink ="/home">Shiksha</a>
     <ul class="nav navbar-nav">
-      <!-- <li class="active">
-        <a class = "nav-link" routerLink ="/admin/dashboard">DashBoard</a>
-      </li> -->
       <li class="active">
         <a class = "nav-link" routerLink ="/home">Home</a>
       </li>
@@ -157,3 +133,8 @@
     </div> 
 </div>
 
+
+
+
+
+ 

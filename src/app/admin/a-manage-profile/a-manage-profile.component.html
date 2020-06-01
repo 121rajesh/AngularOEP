@@ -59,17 +59,17 @@
 
  <div class="content">        
     <form #myFrom ="ngForm" (ngSubmit)="update(myFrom.value)"> 
-       <label for="Name"><b>Name</b></label>
-       <input [(ngModel)]="userObj.Name" type="text"  name="Name" required class="form-control" >
+       <label for="name"><b>Name</b></label>
+       <input [(ngModel)]="userObj.name" type="text"  name="name" required class="form-control" >
    
-       <label for="EmailId"><b>Email</b></label>
-       <input [(ngModel)]="userObj.EmailId" readonly type="email"  name="EmailId" required class="form-control" ><br>
+       <label for="emailId"><b>Email</b></label>
+       <input [(ngModel)]="userObj.emailId" readonly type="email"  name="emailId" required class="form-control" ><br>
        
-       <label for="MobileNo"><b>Mobile No</b></label>
-       <input [(ngModel)]="userObj.MobileNo" readonly type="number"  name="MobileNo" required class="form-control" ><br>
+       <label for="mobileNo"><b>Mobile No</b></label>
+       <input [(ngModel)]="userObj.mobile" readonly type="number"  name="mobile" required class="form-control" ><br>
 
-       <label for="Password"><b>Current Password</b></label>
-       <input ngModel type="password" name="Password" required class="form-control" >
+       <label for="password"><b>Current Password</b></label>
+       <input ngModel type="password" name="password" required class="form-control" >
        
        <label for="NewPassword"><b>New Password</b></label>
        <input ngModel type="password" name="NewPassword" required class="form-control" >

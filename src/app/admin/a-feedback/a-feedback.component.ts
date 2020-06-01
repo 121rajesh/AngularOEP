@@ -16,9 +16,11 @@ export class AFeedbackComponent implements OnInit {
     this.service.GetFeedback()
     .subscribe((result:any)=>{
       // debugger
-      console.log(result.Data);
+      console.log(result.data);
       
-      this.userData = result.Data;
+      this.userData = result.data;
+      console.log(this.userData.fdbkId);
+      
       });  
       
   }

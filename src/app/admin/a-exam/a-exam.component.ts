@@ -13,6 +13,6 @@ export class AExamComponent implements OnInit {
   }
   paperFormat(formValue)
   {
-    
+      
   }
 }

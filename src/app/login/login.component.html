@@ -1,26 +1,6 @@
 <br>
 <br>
 <br>
-<!-- <div class="model-content">
-    <form #myForm="ngForm" (onSubmit)="Login(myForm)" class="from-container" >
-    
-        <div class="container" style="padding-right: 55%;">
-          <label for="EmailId"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="EmailId" required class="form-control">
-      
-          <label for="Password"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="Password" required class="form-control">
-      
-          <button type="submit" class="btn btn-success">Login</button>
-          <label>&nbsp;&nbsp;&nbsp;&nbsp;   
-            <b>New here?</b>&nbsp;&nbsp; <a href="/register"><b>Register</b></a>
-          </label>
-          
-        </div>
-      </form>
-    
-</div> --> 
-
 
 <div *ngIf="!this.auth_service.isLoggedIn()">
   <div class="bg-img">
@@ -31,19 +11,17 @@
     </div>
     
     
-    <!-- <div class="box  " *ngIf="!this.auth_service.isLoggedIn()"></div> -->
+    
       <div class="box  " *ngIf="!this.auth_service.isLoggedIn()"> 
-         <!-- <span>
-           {{message}}
-         </span> -->
+        
         <form #myForm="ngForm" (ngSubmit)="Validation(myForm.value)" class="container">
           
             <div class="container" style=" color:black">
-              <label  for="EmailId"><b>Username</b></label>
-              <input class="form-control" ngModel type="email" placeholder="Enter Email id" id="EmailId" required email  name="EmailId" #EmailId="ngModel" #spy>
+              <label  for="emailId"><b>Username</b></label>
+              <input class="form-control" ngModel type="email" placeholder="Enter Email id" id="emailId" required email  name="emailId" #EmailId="ngModel" #spy>
                 <br>
                 
-                <div *ngIf="EmailId.invalid && (EmailId.dirty || EmailId.touched || EmailId.pristine)" class="alert alert-danger">
+                <div *ngIf="EmailId.invalid && (EmailId.dirty)" class="alert alert-danger">
                   <div *ngIf="EmailId.errors.required">
                       Email id is required.
                   </div>
@@ -51,10 +29,10 @@
                       Email Id must be valid. 
                   </div>
               </div>
-              <label for="Password"><b>Password</b></label>
-              <input  type="password" ngModel placeholder="Enter Password" id="Password" required minlength="4" maxlength="10"  name="Password" #Password="ngModel" #spy class="form-control" >
+              <label for="password"><b>Password</b></label>
+              <input  type="password" ngModel placeholder="Enter Password" id="password" required minlength="4" maxlength="10"  name="password" #Password="ngModel" #spy class="form-control" >
                 <br>
-                <div *ngIf="Password.invalid && (Password.dirty || Password.touched || Password.pristine)" class="alert alert-danger">
+                <div *ngIf="Password.invalid && (Password.dirty )" class="alert alert-danger">
           <div *ngIf="Password.errors.required">
               Password is required.
           </div>

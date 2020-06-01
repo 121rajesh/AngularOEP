@@ -11,16 +11,18 @@
         <tr>
           <th>Subject Id</th>
           <th>Subject Name</th>
+          <!-- <th>No of Questions</th> -->
           <th  style="text-align: center;">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let sub of subjects">
-          <td scope="row">{{sub.SubId}}</td>
-          <td>{{sub.SubName}}</td>
-          
-          <td  style="text-align: center;"><button class="btn btn-primary" routerLink="/admin/modules/managesubjects/manageque/{{sub.SubId}}">Manage Question</button>
-          <button class="btn btn-danger" (click)="deleteSub(sub.SubId)">Delete</button></td>
+          <td scope="row">{{sub.subId}}</td>
+          <td>{{sub.subName}}</td>
+        <!-- after completion -->
+          <!-- <td>1</td> -->
+          <td  style="text-align: center;"><button class="btn btn-primary" routerLink="/admin/modules/managesubjects/manageque/{{sub.subId}}">Manage Question</button>
+          <button class="btn btn-danger" (click)="deleteSub(sub.subId)">Delete</button></td>
         </tr>
       </tbody>
     </table>

@@ -23,7 +23,7 @@ export class ManageProfileComponent implements OnInit {
       
       this.service.UserData(this.UserId)
       .subscribe((result:any)=>{
-        this.userObj = result.Data;
+        this.userObj = result.data;
         console.log(this.userObj);
         
       })
@@ -34,20 +34,24 @@ export class ManageProfileComponent implements OnInit {
   update(UIData:any)
   {
     debugger
-    if(UIData.Password == this.userObj.Password)
+    if(UIData.password == this.userObj.password)
     {
-      console.log("UIData.Password = "+UIData.Password+" userObj.Password = "+this.userObj.Password);
+      console.log("UIData.Password = "+UIData.password+" userObj.Password = "+this.userObj.password);
       
       if (UIData.NewPassword == UIData.CnfPassword) 
       {
         console.log("UIData.Password = "+UIData.NewPassword+" userObj.Password = "+UIData.CnfPassword);
+        this.userObj.password = UIData.NewPassword;
         this.service.UpdateUser(this.UserId,this.userObj)
     .subscribe((result:any)=>{
-      if(result.Status == "Success")
+      if(result.status == "Success")
       {
         alert("Profile updated successfully!!")
         this.router.navigate(['home']);
       }
+      },error=>{
+        console.log("something went wrong !!!");
+        
       })
       }
       else

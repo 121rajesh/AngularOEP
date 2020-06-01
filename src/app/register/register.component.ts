@@ -17,24 +17,25 @@ export class RegisterComponent implements OnInit {
   {
     let formData =DataFromUI.form.value;
     console.log(formData);
-    if(formData.Password == formData.CnfPassword)
+    if(formData.password == formData.cnfPassword)
     {
-      if (sessionStorage.getItem("RoleId") == "1")
+      debugger
+      if (sessionStorage.getItem("Role") == "ADMIN")
       {
-        formData.RoleId = 1;
+        formData.role = "ADMIN";
       }
       else
       {
-        formData.RoleId = 2;
+        formData.role = "USER";
       }
       let result = this.service.RegisterData(formData);
 
       result.subscribe((data:any)=>{
-      if(data.error == null)
+      if(data.status == "Success")
         {
-          this.message = data.Status;
-          console.log(data.Data.UserId);
-          if (formData.RoleId == 1) 
+          this.message = data.status;
+          console.log(data.data.userId);
+          if (data.role == "ADMIN") 
           {
             this.router.navigate(['home']);
             alert("Admin registered Successfully!!")
@@ -49,8 +50,8 @@ export class RegisterComponent implements OnInit {
         else
         {
           console.log(data);
-          this.message = data.Status;
-          console.log(data.Data.Err);
+          this.message = data.status;
+          console.log(data.data);
         }
       })
     }

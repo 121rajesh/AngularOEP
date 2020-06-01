@@ -24,11 +24,11 @@ export class UExamComponent implements OnInit {
        this.subId= params['SubId']});
     debugger
     this.service.GetSubject(this.subId).subscribe((subjectData:any)=>{
-      if(subjectData.Data !=null || subjectData.Data!=undefined)
+      if(subjectData.data !=null || subjectData.data!=undefined)
       
-      this.subject = subjectData.Data;
-      console.log(this.subject.SubName);
-      console.log(this.subject.SubName);
+      this.subject = subjectData.data;
+      console.log(this.subject.subName);
+      console.log(this.subject.subName);
       
     })
   }

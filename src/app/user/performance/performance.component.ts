@@ -21,15 +21,15 @@ ngOnInit() {
   this.service.GetResult(this.id)
   .subscribe((resultdata:any)=>{
     
-    if(resultdata.Data != null)
+    if(resultdata.data != null)
     {
-      this.result = resultdata.Data
+      this.result = resultdata.data
     console.log(this.result);
     }
     else
     {
-      console.log(resultdata.Status);
-      alert(resultdata.Status)
+      console.log(resultdata.status);
+      alert(resultdata.status)
     }
     
   })

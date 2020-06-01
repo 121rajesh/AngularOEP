@@ -18,9 +18,9 @@ message:string
        
     let result = this.service.AddSubject(subDataFromUI)
     .subscribe((subData:any)=>{
-      if (subData.error == null)
+      if (subData.status == "Success")
       {
-        this.message = subData.Status;
+        this.message = subData.status;
         console.log(subData);
         
       }

@@ -13,7 +13,7 @@ export class AppComponent {
   /**
    *
    */
-  constructor(private AuthService:AuthService, private router:Router,private service:DataService) {
+  constructor(public AuthService:AuthService, public router:Router,public service:DataService) {
     
     
   }
@@ -51,7 +51,7 @@ export class AppComponent {
     this.service.GetSubjects()
     .subscribe((subjectdata:any)=>{
       
-      this.subjects = subjectdata.Data;
+      this.subjects = subjectdata.data;
      // console.log(this.subjects);
   })
 }

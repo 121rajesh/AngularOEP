@@ -35,10 +35,10 @@ loginUserData ={}
         
     //   }
     // })
-    console.log(credentials.EmailId);
-    console.log(credentials.Password);
+    // console.log(credentials.EmailId);
+    // console.log(credentials.Password);
     
-    if( credentials.EmailId ==null || credentials.Password ==null )
+    if( credentials.emailId ==null || credentials.password ==null )
       {
         debugger
           this.msg = "Username/Password is required!!";
@@ -51,7 +51,7 @@ loginUserData ={}
       }
 
   }
-  Login(credentials: {EmailId:any; Password:any;})
+  Login(credentials: {emailId:any; password:any;})
   {
     debugger
      // throw new Error("Method not implemented.");
@@ -59,12 +59,12 @@ loginUserData ={}
     let result=this.service.LoginUserData(credentials)
     result.subscribe((result1:any)=>{
       debugger
-      console.log(result1);
+      // console.log(result1);
       // if(credentials.EmailId == result1.Data.EmailId && credentials.Password == result1.Data.Password)
       // {
       //   isLoggedIn = true;
       // }
-      if(result1.Status == "Success")
+      if(result1.status == "Success")
       {
         isLoggedIn = true;
       }
@@ -81,7 +81,7 @@ loginUserData ={}
         this.auth_service.Login(result1);
         this.msg ="";
         debugger
-        if(result1.Data.RoleId == 2)
+        if(result1.data.role == "USER")
         {
         this.router.navigate(['/user/home'])
         }

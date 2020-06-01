@@ -26,16 +26,18 @@ UserData:any
 
   isAdmin()
   {
-    return (sessionStorage.getItem("RoleId")=="1");
+    return (sessionStorage.getItem("Role")=="ADMIN");
   }
 
   Login(data:any)
   {
     debugger
     sessionStorage.setItem("isLoggedIn", "1");
-    sessionStorage.setItem("EmailId",data.Data.EmailId);
-    sessionStorage.setItem("UserId", data.Data.UserId);
-    sessionStorage.setItem("RoleId", data.Data.RoleId);
+    sessionStorage.setItem("EmailId",data.data.emailId);
+    console.log(data.data.userId);
+    
+    sessionStorage.setItem("UserId", data.data.userId);
+    sessionStorage.setItem("Role", data.data.role);
     sessionStorage.setItem("userData", JSON.stringify(data));
     this.UserData = data;
     //this.router.navigate(['/user/dashboard']);
@@ -48,7 +50,7 @@ UserData:any
     delete sessionStorage["EmailId"];
     delete sessionStorage["UserId"];
     delete sessionStorage["userData"];
-    delete sessionStorage["RoleId"];
+    delete sessionStorage["Role"];
     delete sessionStorage["isLoggedIn"];
     this.router.navigate(['/login']);
   }

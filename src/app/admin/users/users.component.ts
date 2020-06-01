@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
     this.service.GetUsers()
     .subscribe((result:any)=>{
       // debugger
-      this.userData = result.Data;
+      this.userData = result.data;
       });  
       
   }
@@ -30,11 +30,11 @@ export class UsersComponent implements OnInit {
     // else
     // {user.IsLocked="true";}
     
-    user.IsLocked=!user.IsLocked
-    this.service.UpdateUser(user.UserId,user)
+    user.isLocked=!user.isLocked
+    this.service.UpdateUser(user.userId,user)
     .subscribe((result:any)=>{
-      console.log(result.Status);
-      console.log(result.Data);
+      console.log(result.status);
+      console.log(result.data);
       
     })
   }

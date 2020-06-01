@@ -34,7 +34,6 @@ import { ResultsComponent } from './admin/a-exam/results/results.component';
 import { AddsubjectComponent } from './admin/modules/addsubject/addsubject.component';
 import { ViewfeedbackComponent } from './admin/a-feedback/viewfeedback/viewfeedback.component';
 import { ManagesubjectsComponent } from './admin/modules/managesubjects/managesubjects.component';
-import { EditComponent } from './admin/modules/managesubjects/edit/edit.component';
 import { ManagequestionsComponent } from './admin/modules/managesubjects/managequestions/managequestions.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
@@ -70,7 +69,6 @@ import { PaperComponent } from './user/u-exam/paper/paper.component';
     AddsubjectComponent,
     ViewfeedbackComponent,
     ManagesubjectsComponent,
-    EditComponent,
     ManagequestionsComponent,
     ForgotPasswordComponent,
     EditProfileComponent,
@@ -106,7 +104,6 @@ import { PaperComponent } from './user/u-exam/paper/paper.component';
       { path: 'admin/modules',component:ModulesComponent, canActivate:[AuthService] },
       { path: 'admin/modules/addsubject',component:AddsubjectComponent, canActivate:[AuthService] },
       { path: 'admin/modules/managesubjects',component:ManagesubjectsComponent, canActivate:[AuthService] },
-      { path: 'admin/modules/managesubjects/edit',component:EditComponent, canActivate:[AuthService] },
       { path: 'admin/modules/managesubjects/manageque/:SubId',component:ManagequestionsComponent, canActivate:[AuthService] },
       { path: 'admin/users',component:UsersComponent, canActivate:[AuthService] },
       { path: 'admin/exam',component:AExamComponent, canActivate:[AuthService] },
@@ -115,8 +112,8 @@ import { PaperComponent } from './user/u-exam/paper/paper.component';
       { path: 'admin/feedback',component:AFeedbackComponent, canActivate:[AuthService] },
       { path: 'admin/feedback/viewfb/:FId',component:ViewfeedbackComponent, canActivate:[AuthService] },      
       { path: 'admin/manageprofile',component:AManageProfileComponent, canActivate:[AuthService] },
-      { path: 'forgotpassword', component:ForgotPasswordComponent},
-      { path: 'editprofile', component:EditComponent, canActivate:[AuthService]}
+      { path: 'forgotpassword', component:ForgotPasswordComponent}
+      
     ])
   ],
   providers: [DataService, HttpClientModule],

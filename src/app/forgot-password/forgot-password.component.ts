@@ -23,10 +23,10 @@ export class ForgotPasswordComponent implements OnInit {
     alert("In generate otp");
     let resultstate=this.service.OTPGenerate(this.email);
     resultstate.subscribe((data:any)=>{
-      console.log(":)"+data.Status);
+      console.log(":)"+data.status);
       console.log(data);
-      alert("Your OTP :"+data.Data);
-      if(data.Status=="success")
+      
+      if(data.status=="Success")
       {
         this.flag=1;
       }
@@ -38,11 +38,10 @@ export class ForgotPasswordComponent implements OnInit {
     let resultstate=this.service.OTPValidate(this.otp,this.email);
     
     resultstate.subscribe((data:any)=>{
-      console.log(":)"+data.Status);
-      if(data.Status=="success")
+      console.log(":)"+data.data);
+      if(data.status=="Success")
       {
        
-        alert("valid OTP");
         this.flag=2;
  
       }
@@ -53,11 +52,10 @@ export class ForgotPasswordComponent implements OnInit {
 
   resetPassword()
   {
-    alert("In Reset otp");
     let resultstate=this.service.Passwordreset(this.password,this.email);
     resultstate.subscribe((data:any)=>{
-      console.log(":)"+data.Data);
-      if(data.Status=="success")
+      console.log(":)"+data.data);
+      if(data.status=="Success")
       {
         this.router.navigate(['/login'])
  

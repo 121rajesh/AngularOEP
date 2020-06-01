@@ -4,7 +4,7 @@
             <tr *ngFor="let sub of subjects">
 
                 <td style="text-align: center;"><button class="btn btn-primary" style="width: 150px;"
-                        (click)="displayPaper(sub.SubId)">{{sub.SubName}}</button>
+                        (click)="displayPaper(sub.subId)">{{sub.subName}}</button>
             <tr>
 
             </tr>
@@ -20,16 +20,16 @@
                     <ng-container >
 
                         <tr>
-                            <td colspan="4" scope="row">{{i+1}}) {{ques.Question}}</td>
+                            <td colspan="4" scope="row">{{i+1}}) {{ques.question}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td scope="row">A] {{ques.Opt1}}</td>
-                            <td>B] {{ques.Opt2}}</td>
-                            <td>C] {{ques.Opt3}}</td>
-                            <td>D] {{ques.Opt4}}</td>
+                            <td scope="row">A] {{ques.opt1}}</td>
+                            <td>B] {{ques.opt2}}</td>
+                            <td>C] {{ques.opt3}}</td>
+                            <td>D] {{ques.opt4}}</td>
                         </tr>
                         </ng-container>
                 </tbody>
